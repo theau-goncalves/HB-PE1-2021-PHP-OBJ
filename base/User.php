@@ -5,6 +5,7 @@ class User
     public string $firstName;
     private string $lastName;
     private int $age = 25;
+    private string $email;
     private ?string $gender;
 
     /**
@@ -17,12 +18,14 @@ class User
         string $firstName,
         string $lastName,
         int $age,
+        string $email,
         ?string $gender = null
     )
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->age = $age;
+        $this->email = $email;
         $this->gender = $gender;
     }
 
@@ -92,6 +95,24 @@ class User
     {
         $this->gender = $gender;
     }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+
+
 
     public function __toString(): string
     {

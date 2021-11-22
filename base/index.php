@@ -4,7 +4,7 @@ include '../functions.php';
 include 'User.php';
 include 'Post.php';
 
-$me = new User('Théau', 'Goncalves', 25, 'male');
+$me = new User('Théau', 'Goncalves', 25, 'theau@drosalys.fr', 'male');
 $me->setAge(25);
 //echo $me;
 //dump($me);
