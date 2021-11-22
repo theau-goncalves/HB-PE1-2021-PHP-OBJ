@@ -42,4 +42,14 @@ function isLicenceValid(Datetime $licenceSubscriptionDate): bool
     return false;
 }
 
-dump(isLicenceValid($licenceSubscriptionDate));
+//dump(isLicenceValid($licenceSubscriptionDate));
+
+$start = new DateTime('2021-01-01');
+
+for ($i = 1; $i <=12; $i++) {
+    echo $start->format('t/m/Y') . '<br>';
+    $start->add(new DateInterval('P1M'));
+}
+
+echo $today->modify('next Monday')->format('d/m/Y');
+
