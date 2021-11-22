@@ -2,10 +2,30 @@
 
 class User
 {
-    public string $firstName = "Théau";
-    private string $lastName = "Goncalves";
+    public string $firstName;
+    private string $lastName;
     private int $age = 25;
-    private ?string $gender = null;
+    private ?string $gender;
+
+    /**
+     * @param string $firstName
+     * @param string $lastName
+     * @param int $age
+     * @param string|null $gender male | female | other
+     */
+    public function __construct(
+        string $firstName,
+        string $lastName,
+        int $age,
+        ?string $gender = null
+    )
+    {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->age = $age;
+        $this->gender = $gender;
+    }
+
 
     /**
      * @return string
@@ -71,6 +91,11 @@ class User
     public function setGender(?string $gender): void
     {
         $this->gender = $gender;
+    }
+
+    public function __toString(): string
+    {
+        return $this->firstName . ' ' . $this->lastName;
     }
 
 
