@@ -5,23 +5,24 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 
 ### Theory
 
-- [x]Object on PHP
-- [ ]Simple explanation  of composer
-- PHP DateTime (date folder)
-- Create a php Class (base folder)
-- Attributes
-- Methods
-- Constructor
-- Visibility (public private protected)
-- Heritage
-- Invoke
-- Exceptions
-- Static
-- Abstract
-- Trait
-- Interface
-- ReflectionClass
-- [Composer -> HB Lesson](https://github.com/theau-goncalves/composer-autoloader)
+
+- [x] Object on PHP
+- [x] Simple explanation  of composer
+- [x] PHP DateTime (date folder)
+- [x] Create a php Class (base folder)
+- [x] Attributes
+- [x] Methods
+- [ ] Constructor
+- [x] Visibility (public private protected)
+- [ ] Heritage
+- [ ] Invoke
+- [ ] Exceptions
+- [ ] Static
+- [ ] Abstract
+- [ ] Trait
+- [ ] Interface
+- [ ] ReflectionClass
+- [ ] [Composer -> HB Lesson](https://github.com/theau-goncalves/composer-autoloader)
 
 ### Exercises
 - Contact and user (heritage)

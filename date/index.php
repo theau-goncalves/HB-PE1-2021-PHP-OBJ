@@ -41,3 +41,5 @@ function isLicenceValid(Datetime $licenceSubscriptionDate): bool
 
     return false;
 }
+
+dump(isLicenceValid($licenceSubscriptionDate));
