@@ -5,10 +5,10 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 
 ### Theory
 
-- Object on PHP
-- Simple explanation  of composer
-- PHP DateTime
-- Create a php Class
+- [x]Object on PHP
+- [ ]Simple explanation  of composer
+- PHP DateTime (date folder)
+- Create a php Class (base folder)
 - Attributes
 - Methods
 - Constructor
