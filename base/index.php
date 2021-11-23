@@ -44,6 +44,17 @@ $student = new Student(
         25,
         'theau@drosalys.fr',
         'male',
-        'Pole Emploi'
+        'Pole Emploi',
+        [
+                'BREVET',
+                'BAC STI2D',
+                'LICENCE DAWIN',
+                'PERMIS B',
+                'PERMIS A2',
+                'PERMIS A',
+        ]
 );
+
+$student->addDegree('ASSR2');
+$student->removeDegree('PERMIS A2');
 dump($student);
