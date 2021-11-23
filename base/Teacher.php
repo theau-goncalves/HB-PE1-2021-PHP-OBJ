@@ -79,6 +79,11 @@ class Teacher extends User
         unset($this->lessonSubjects[$lessonName]);
     }
 
+    public function getAvgLessonCapacity(): float
+    {
+        return array_sum($this->lessonSubjects)/ count($this->lessonSubjects);
+    }
+
     /**
      * @return Student|null
      */
@@ -94,8 +99,4 @@ class Teacher extends User
     {
         $this->firstStudent = $firstStudent;
     }
-
-
-
-
 }

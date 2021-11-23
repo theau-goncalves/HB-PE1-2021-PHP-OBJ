@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION['coucou'] = 'titi';
 include '../functions.php';
 
 include 'User.php';
@@ -79,7 +81,7 @@ $theau = new Teacher(
 
 $theau->addLessonSubject('SCSS', 5);
 $theau->removeLessonSubject('Java');
-
+dump($theau->getAvgLessonCapacity());
 ?>
 
 <ul>
@@ -89,5 +91,7 @@ $theau->removeLessonSubject('Java');
         </li>
     <?php endforeach; ?>
 </ul>
+
+
 
 

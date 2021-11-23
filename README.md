@@ -43,3 +43,27 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 
 - Composer 1 or 2
 - PHP > 8.0
+
+## RPG
+- Classe Personnage (Abstract)
+- Classe enfant Warrior/ Bard / CoffeeThrower
+- Class Mob (V2)
+
+- name 
+- favorite quote (Citation favorite)
+- maxHp (Point de vie max)
+- maxMp (Point de magie max)
+- hp (Point vie / Health Point)
+- mp (Point de magie / Mana pool) 
+- ATK (Point d'attaque physique)
+- MagicAtk (Point d'attaque magic)
+- armor (Point d'armure)
+- magicArmor (Point d'armure magique)
+- speed (V2) (Vitesse -> défini l'ordre d'attaque)
+- xp (V2) (Point d'expérience)
+
+- Classe Item (V2)
+- Class enfant Armor (V2)
+- Classe enfant Potion (V2)
+
+- Class de display message (vu du static) 
