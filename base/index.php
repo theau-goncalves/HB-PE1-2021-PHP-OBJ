@@ -2,6 +2,7 @@
 include '../functions.php';
 
 include 'User.php';
+include 'Student.php';
 include 'Post.php';
 
 $me = new User('Théau', 'Goncalves', 25, 'theau@drosalys.fr', 'male');
@@ -33,3 +34,16 @@ $objectPhpPost = new Post(
 <div class="content">
     <?php echo $objectPhpPost->getContent(); ?>
 </div>
+
+<hr>
+
+<?php
+$student = new Student(
+        'Théau',
+        'Goncalves',
+        25,
+        'theau@drosalys.fr',
+        'male',
+        'Pole Emploi'
+);
+dump($student);

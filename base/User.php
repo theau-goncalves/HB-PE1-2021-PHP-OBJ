@@ -2,11 +2,11 @@
 
 class User
 {
-    public string $firstName;
-    private string $lastName;
-    private int $age = 25;
-    private string $email;
-    private ?string $gender;
+    protected string $firstName;
+    protected string $lastName;
+    protected int $age = 25;
+    protected string $email;
+    protected ?string $gender;
 
     /**
      * @param string $firstName
