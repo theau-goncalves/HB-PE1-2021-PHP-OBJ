@@ -8,16 +8,16 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 
 - [x] Object on PHP
 - [x] Simple explanation  of composer
-- [x] PHP DateTime (date folder)
+- [x] PHP DateTime
   - https://www.php.net/manual/fr/function.date.php
 - [x] Create a php Class (base folder)
 - [x] Attributes
 - [x] Methods
-- [ ] Constructor
+- [x] Constructor
 - [x] Visibility (public private protected)
-- [ ] Heritage
+- [x] Heritage
 - [ ] __invoke
-- [ ] __toString
+- [x] __toString
 - [ ] Exceptions
 - [ ] Static
 - [ ] Abstract
@@ -27,7 +27,8 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 - [ ] [Composer -> HB Lesson](https://github.com/theau-goncalves/composer-autoloader)
 
 ### Exercises
-- Contact and user (heritage)
+- Date (date folder)
+- Contact and user -> heritage and class basics (base folder)
 - Simple RPG game
 
 ## Usefull links
@@ -35,6 +36,8 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 - [PSR-2: Coding Style Guide](https://www.php-fig.org/psr/psr-2/)
 - [PHP DOC](https://docs.phpdoc.org/3.0/guide/references/phpdoc/tags/index.html#tag-reference)
 - [PHP DOC examples](https://docs.phpdoc.org/3.0/guide/guides/docblocks.html)
+- [DateInterval Format](https://www.php.net/manual/en/dateinterval.format.php)
+- [DateTime format](https://www.php.net/manual/en/datetime.format)
 
 ## Requirements
 

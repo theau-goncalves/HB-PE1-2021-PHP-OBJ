@@ -63,7 +63,7 @@ class Teacher extends User
         $this->lessonSubjects = $lessonSubjects;
     }
 
-    public function addLessonSubject($lessonName, int $level): void
+    public function addLessonSubject(string $lessonName, int $level): void
     {
         if($level < 0) {
             $level = 0;
@@ -74,7 +74,7 @@ class Teacher extends User
         $this->lessonSubjects[$lessonName] = $level;
     }
 
-    public function removeLessonSubject($lessonName): void
+    public function removeLessonSubject(string $lessonName): void
     {
         unset($this->lessonSubjects[$lessonName]);
     }
