@@ -3,6 +3,7 @@ include '../functions.php';
 
 include 'User.php';
 include 'Student.php';
+include 'Teacher.php';
 include 'Post.php';
 
 $me = new User('Théau', 'Goncalves', 25, 'theau@drosalys.fr', 'male');
@@ -20,7 +21,6 @@ $objectPhpPost = new Post(
 );
 
 
-
 ?>
 
 <h1 style="text-align: center">
@@ -28,7 +28,7 @@ $objectPhpPost = new Post(
 </h1>
 
 <div style="text-align: center; margin-bottom: 3rem">
-    <?php echo $objectPhpPost->getAuthor() . ' - ' . $objectPhpPost->getReadableCreateAt();?>
+    <?php echo $objectPhpPost->getAuthor() . ' - ' . $objectPhpPost->getReadableCreateAt(); ?>
 </div>
 
 <div class="content">
@@ -39,22 +39,55 @@ $objectPhpPost = new Post(
 
 <?php
 $student = new Student(
-        'Théau',
-        'Goncalves',
-        25,
-        'theau@drosalys.fr',
-        'male',
-        'Pole Emploi',
-        [
-                'BREVET',
-                'BAC STI2D',
-                'LICENCE DAWIN',
-                'PERMIS B',
-                'PERMIS A2',
-                'PERMIS A',
-        ]
+    'Alexis',
+    'Goncalves',
+    28,
+    'alexis@drosalys.fr',
+    'male',
+    'Pole Emploi',
+    [
+        'BREVET',
+        'BAC STI2D',
+        'PERMIS B',
+        'PERMIS A2',
+        'PERMIS A',
+    ]
 );
 
 $student->addDegree('ASSR2');
 $student->removeDegree('PERMIS A2');
 dump($student);
+
+echo '<hr>';
+
+$theau = new Teacher(
+    'Théau',
+    'Goncalves',
+    25,
+    'theau@drosalys.fr',
+    [
+        'PHP' => 5,
+        'Docker' => 2,
+        'Java' => 1,
+        'PHP Storm' => 2,
+        'Html' => 5
+    ],
+    $student,
+    'male'
+);
+
+
+$theau->addLessonSubject('SCSS', 5);
+$theau->removeLessonSubject('Java');
+
+?>
+
+<ul>
+    <?php foreach ($theau->getLessonSubjects() as $lessonSubject => $lvl): ?>
+        <li>
+            <?php echo $lessonSubject . ' : ' . $lvl ?>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
+
