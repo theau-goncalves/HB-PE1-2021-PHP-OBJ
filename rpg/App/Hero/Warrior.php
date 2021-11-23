@@ -8,7 +8,7 @@ class Warrior extends Hero
         parent::__construct($name, $favoriteQuote);
         $this->maxHp = 120;
         $this->maxMp = 20;
-        $this->atk = 20;
+        $this->atk = 50;
         $this->magicAtk = 0;
         $this->armor = 15;
         $this->magicArmor = 10;

@@ -181,8 +181,7 @@ abstract class Hero
 
     public function attackTarget(Hero $target): void
     {
-        $damage = $this->atk - $target->getArmor();
-        $target->loseHP($damage);
+        $target->loseHP($target->calculateDamage($this->getAtk()));
     }
 
     /**
@@ -198,6 +197,22 @@ abstract class Hero
         } else {
             $this->setHp(0);
         }
+    }
+
+    /**
+     * Permet de connaitre les dégats à subir en fonction du montant de l'attaque ennemi
+     * @param int $atkValue
+     * @return int
+     */
+    protected function calculateDamage(int $atkValue): int
+    {
+        $damage = $atkValue - $this->getArmor();
+
+        if($damage < 0 ) {
+            return 0;
+        }
+
+        return $damage;
     }
 }
 
