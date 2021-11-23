@@ -45,10 +45,12 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 - PHP > 8.0
 
 ## RPG
-- Classe Personnage (Abstract)
+### Class
+- Classe Hero (Abstract)
 - Classe enfant Warrior/ Bard / CoffeeThrower
 - Class Mob (V2)
 
+### Hero attributes
 - name 
 - favorite quote (Citation favorite)
 - maxHp (Point de vie max)
@@ -62,8 +64,11 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 - speed (V2) (Vitesse -> défini l'ordre d'attaque)
 - xp (V2) (Point d'expérience)
 
+### Items Class
 - Classe Item (V2)
 - Class enfant Armor (V2)
 - Classe enfant Potion (V2)
+
+### Other Class
 
 - Class de display message (vu du static) 
