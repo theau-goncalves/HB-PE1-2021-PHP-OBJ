@@ -178,5 +178,26 @@ abstract class Hero
     {
         $this->magicArmor = $magicArmor;
     }
+
+    public function attackTarget(Hero $target): void
+    {
+        $damage = $this->atk - $target->getArmor();
+        $target->loseHP($damage);
+    }
+
+    /**
+     * Permet à un joueur de perdre des points de vie sans passer en négatif
+     * @param int $damage
+     */
+    protected function loseHP(int $damage): void
+    {
+        $remainingHp = $this->getHp() - $damage;
+
+        if($remainingHp > 0) {
+            $this->setHp($remainingHp);
+        } else {
+            $this->setHp(0);
+        }
+    }
 }
 
