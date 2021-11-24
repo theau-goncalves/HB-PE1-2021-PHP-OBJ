@@ -1,0 +1,17 @@
+{
+    "name": "theau/rpg",
+    "description": "Little RPG game based on PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "HB\\Rpg\\": "App/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Goncalves Théau",
+            "email": "theau@drosalys.fr"
+        }
+    ],
+    "require": {}
+}
