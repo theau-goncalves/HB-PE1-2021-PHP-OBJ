@@ -17,4 +17,5 @@ $maeva->attackTarget($doigbynique);
 dump($doigbynique);
 
 
+?>
 

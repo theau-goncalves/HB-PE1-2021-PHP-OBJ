@@ -1,4 +1,5 @@
 <?php
+
 class Message
 {
 
@@ -16,13 +17,13 @@ class Message
 
     public static function startGame(): void
     {
-       self::displayHtml(self::getRandomMessage(self::START_GAME));
+        self::displayHtml(self::getRandomMessage(self::START_GAME), 'start');
     }
 
     public static function deadHero(Hero $hero): void
     {
-        $message =  str_replace('%hero_name%', $hero->getName(), self::getRandomMessage(self::DEAD_HERO));
-        self::displayHtml($message);
+        $message = str_replace('%hero_name%', $hero->getName(), self::getRandomMessage(self::DEAD_HERO));
+        self::displayHtml($message, ['dead', 'aie']);
     }
 
     public static function getRandomMessage(array $messageConst): string
@@ -30,15 +31,16 @@ class Message
         return $messageConst[array_rand($messageConst)];
     }
 
-    public static function displayHtml(string $message): void
+    public static function displayHtml(string $message, string|array $classes = []): void
     {
-        //Ajout param optionnel de type array
-        // Faire génération de la liste des classes
+        if (empty($classes)) {
+            $classes = '';
+        } elseif (is_array($classes)) {
+            $classes = ' ' . implode(' ', $classes);
+        } else {
+            $classes = ' ' . $classes;
+        }
 
-        // Ex: ['danger', 'toto']
-        //<div class="message danger toto"> Message </div>
-
-        echo '<div class="message">' . $message . '</div>';
+        echo '<div class="message' . $classes . '">' . $message . '</div>';
     }
 }
-
