@@ -2,8 +2,6 @@
 use \App\Game\Message;
 use \App\Hero\Warrior;
 use \App\Hero\Archer;
-
-include '../functions.php';
 require 'vendor/autoload.php';
 ?>
 <!doctype html>
@@ -29,6 +27,8 @@ $max = new Archer('Gentil Lapin', 'Tu risque de te pincer très très fort ...')
 $doigbynique->roar();
 $maeva->attackTarget($doigbynique);
 $max->longShot($maeva);
+
+dump($max);
 
 
 ?>
