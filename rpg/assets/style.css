@@ -1,0 +1,10 @@
+.message {
+    box-shadow: 2px 3px 3px lightgrey;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.dead {
+    background-color: #bd1414;
+    color: white;
+}
