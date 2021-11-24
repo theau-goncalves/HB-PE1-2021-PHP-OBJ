@@ -2,6 +2,7 @@
 
 class Warrior extends Hero
 {
+    private int $armorBuffValue = 5;
 
     public function __construct(string $name, ?string $favoriteQuote = null)
     {
@@ -16,6 +17,10 @@ class Warrior extends Hero
         $this->mp = $this->maxMp;
     }
 
-
+    public function roar()
+    {
+        $this->setArmor($this->getArmor() + $this->armorBuffValue);
+        $this->setMagicArmor($this->getMagicArmor() + $this->armorBuffValue);
+    }
 
 }

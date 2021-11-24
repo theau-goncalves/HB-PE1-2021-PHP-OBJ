@@ -14,6 +14,9 @@ class Message
         "%hero_name% est ne respire plus.",
         "%hero_name% : Ah je bouge plus, je suis bien, la !"
     ];
+    const SPELL_USAGE = [
+        '%hero_name% utilise %spell_name%. %effect%',
+    ];
 
     public static function startGame(): void
     {
@@ -29,6 +32,23 @@ class Message
     public static function getRandomMessage(array $messageConst): string
     {
         return $messageConst[array_rand($messageConst)];
+    }
+
+    public static function useSpell(Hero $hero, string $spellName, string $effect)
+    {
+        $message = str_replace(
+            [
+                '%hero_name%',
+                '%spell_name%',
+                '%effect%'
+            ],
+            [
+                $hero->getName(),
+                $spellName,
+                $effect
+            ],
+            self::getRandomMessage(self::SPELL_USAGE)
+        );
     }
 
     public static function displayHtml(string $message, string|array $classes = []): void
