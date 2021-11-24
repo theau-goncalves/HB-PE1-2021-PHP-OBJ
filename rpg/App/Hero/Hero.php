@@ -196,6 +196,7 @@ abstract class Hero
             $this->setHp($remainingHp);
         } else {
             $this->setHp(0);
+            Message::deadHero($this);
         }
     }
 
