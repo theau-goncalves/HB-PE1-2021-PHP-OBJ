@@ -4,10 +4,7 @@ use \App\Hero\Warrior;
 use \App\Hero\Archer;
 
 include '../functions.php';
-include 'App/Hero/Hero.php';
-include 'App/Hero/Warrior.php';
-include 'App/Hero/Archer.php';
-include 'App/Game/Message.php';
+require 'vendor/autoload.php';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -20,10 +17,6 @@ include 'App/Game/Message.php';
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-<h1 style="text-align: center; font-size: 3rem">
-    Je suis un
-</h1>
-<img src="/assets/images/sddefault.jpg" style="width: 450px; margin: 0 auto; display: block">
 
 <?php
 
