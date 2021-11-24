@@ -19,7 +19,7 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 - [ ] __invoke
 - [x] __toString
 - [ ] Exceptions
-- [ ] Static
+- [x] Static
 - [x] Abstract
 - [ ] Trait
 - [ ] Interface

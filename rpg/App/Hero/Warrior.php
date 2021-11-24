@@ -17,4 +17,5 @@ class Warrior extends Hero
     }
 
 
+
 }
