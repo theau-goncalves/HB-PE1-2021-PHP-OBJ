@@ -26,8 +26,11 @@ $doigbynique = new Warrior('Doigbynique', 'Tu es capable');
 $maeva = new Warrior('Maeva', 'Avec vos jeux de cons la ...');
 
 dump($doigbynique);
-$maeva->attackTarget($doigbynique);
+$doigbynique->roar();
+
 dump($doigbynique);
+
+$maeva->attackTarget($doigbynique);
 
 
 ?>

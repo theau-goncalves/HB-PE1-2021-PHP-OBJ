@@ -21,6 +21,11 @@ class Warrior extends Hero
     {
         $this->setArmor($this->getArmor() + $this->armorBuffValue);
         $this->setMagicArmor($this->getMagicArmor() + $this->armorBuffValue);
+        Message::useSpell(
+            $this,
+            'Cri du guerrier',
+            "Augmente l'armure physique et magique de " . $this->armorBuffValue . ' points'
+        );
     }
 
 }

@@ -49,6 +49,8 @@ class Message
             ],
             self::getRandomMessage(self::SPELL_USAGE)
         );
+
+        self::displayHtml($message, 'spell');
     }
 
     public static function displayHtml(string $message, string|array $classes = []): void
