@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Hero;
+
+use App\Game\Message;
+
 class Archer extends Hero
 {
     public function __construct(string $name, ?string $favoriteQuote = null)

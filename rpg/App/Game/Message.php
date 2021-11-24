@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Game;
+
+use App\Hero\Hero;
+
 class Message
 {
 

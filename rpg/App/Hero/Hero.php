@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Hero;
+
+use App\Game\Message;
+
 abstract class Hero
 {
     protected string $name;

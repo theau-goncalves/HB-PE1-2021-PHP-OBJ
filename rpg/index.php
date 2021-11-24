@@ -1,4 +1,8 @@
 <?php
+use \App\Game\Message;
+use \App\Hero\Warrior;
+use \App\Hero\Archer;
+
 include '../functions.php';
 include 'App/Hero/Hero.php';
 include 'App/Hero/Warrior.php';

@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Hero;
+
+use App\Game\Message;
+
 class Warrior extends Hero
 {
     private int $armorBuffValue = 5;
