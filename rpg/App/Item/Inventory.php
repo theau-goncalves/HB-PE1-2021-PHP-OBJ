@@ -41,7 +41,9 @@ class Inventory
 
     public function addItem(Item $item): void
     {
-        $this->slots[] = $item;
+        $slots = $this->getSlots();
+        $slots[] = $item;
+        $this->setSlots($slots);
     }
 
     /**
