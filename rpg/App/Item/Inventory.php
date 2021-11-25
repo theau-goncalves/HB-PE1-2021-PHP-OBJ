@@ -5,7 +5,7 @@ namespace App\Item;
 class Inventory
 {
     private array $slots = [];
-    private int $maxWeight = 100;
+    private int $maxWeight = 150;
 
     /**
      * @return Item[]
@@ -61,4 +61,23 @@ class Inventory
             }
         }
     }
+
+    public function getTotalWeight(): float
+    {
+        $total = 0;
+        foreach ($this->getSlots() as $item) {
+            /** @var Item $item */
+            $total += $item->getWeight();
+        }
+
+        return $total;
+    }
+
+    public function getTotalWeightPercentage(): float
+    {
+        return round($this->getTotalWeight() * 100 / $this->getMaxWeight(),2);
+    }
+
+
+
 }

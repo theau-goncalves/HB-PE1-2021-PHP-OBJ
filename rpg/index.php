@@ -38,7 +38,7 @@ $nicolas->vampire($max);
 
 $nains = new Equipment('Epée des nains', ['atkBonus' => 2], 6);
 $elfe = new Equipment('Epée des elfes', ['atkBonus' => 3], 6);
-$doig = new Equipment('Epée de Doig', ['atkBonus' => 400], 6);
+$doig = new Equipment('Epée de Doig', ['atkBonus' => 400], 9);
 
 
 $nicolas->getInventory()->addItem($nains);
@@ -48,7 +48,8 @@ $nicolas->getInventory()->addItem($doig);
 dump($nicolas);
 
 $nicolas->getInventory()->removeItem('Epée des elfes');
-dump($nicolas);
+dump($nicolas->getInventory()->getTotalWeight());
+dump($nicolas->getInventory()->getTotalWeightPercentage());
 ?>
 </body>
 </html>
