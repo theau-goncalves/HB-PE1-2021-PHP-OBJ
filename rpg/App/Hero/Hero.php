@@ -3,6 +3,7 @@
 namespace App\Hero;
 
 use App\Game\Message;
+use App\Item\Inventory;
 
 abstract class Hero
 {
@@ -19,11 +20,13 @@ abstract class Hero
     protected int $magicAtk;
     protected int $armor;
     protected int $magicArmor;
+    protected Inventory $inventory;
 
     public function __construct(string $name, ?string $favoriteQuote = null)
     {
         $this->name = $name;
         $this->favoriteQuote = $favoriteQuote;
+        $this->inventory = new Inventory();
     }
 
     /**
@@ -184,6 +187,22 @@ abstract class Hero
     public function setMagicArmor(int $magicArmor): void
     {
         $this->magicArmor = $magicArmor;
+    }
+
+    /**
+     * @return Inventory
+     */
+    public function getInventory(): Inventory
+    {
+        return $this->inventory;
+    }
+
+    /**
+     * @param Inventory $inventory
+     */
+    public function setInventory(Inventory $inventory): void
+    {
+        $this->inventory = $inventory;
     }
 
     public function attackTarget(Hero $target): void

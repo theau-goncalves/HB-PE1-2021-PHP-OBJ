@@ -45,6 +45,9 @@ $epee = new Equipment(
 
 
 dump($epee);
+$nicolas->getInventory()->addItem($epee);
+
+dump($nicolas);
 
 ?>
 </body>
