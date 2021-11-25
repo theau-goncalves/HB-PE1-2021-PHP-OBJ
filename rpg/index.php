@@ -25,8 +25,9 @@ $doigbynique = new Warrior('Doigbynique', 'Tu es capable');
 $maeva = new Warrior('Maeva', 'Avec vos jeux de cons la ...');
 $max = new Archer('Gentil Lapin', 'Tu risque de te pincer très très fort ...');
 $doigbynique->roar();
-$maeva->attackTarget($doigbynique);
 $max->longShot($maeva);
+$maeva->attackTarget($doigbynique);
+
 
 dump($max);
 

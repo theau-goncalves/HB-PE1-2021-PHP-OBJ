@@ -21,12 +21,9 @@ class Archer extends Hero
 
     public function longShot(Hero $target)
     {
-        $hp = $target->getHp();
+        $damage = $target->calculateDamage($this->getAtk() * 1.5);
+        Message::useSpell($this, 'Long tir', "Il inflige $damage points de dégats.");
+        $target->loseHP($damage);
 
-        $target->loseHP($target->calculateDamage($this->getAtk() * 1.5));
-
-        $hp = $hp - $target->getHp();
-
-        Message::useSpell($this, 'Long tir', "Il inflige $hp points de dégats.");
     }
 }
