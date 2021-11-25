@@ -57,6 +57,12 @@ class Message
         self::displayHtml($message, 'spell');
     }
 
+    public static function heal(Hero $hero, int $healValue)
+    {
+        $message = $hero->getName() . " récupère $healValue points de vie";
+        self::displayHtml($message, 'heal'); 
+    }
+
     public static function displayHtml(string $message, string|array $classes = []): void
     {
         if (empty($classes)) {

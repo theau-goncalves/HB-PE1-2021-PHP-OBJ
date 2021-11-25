@@ -1,7 +1,8 @@
 <?php
-use \App\Game\Message;
-use \App\Hero\Warrior;
-use \App\Hero\Archer;
+use App\Game\Message;
+use App\Hero\Warrior;
+use App\Hero\Archer;
+use App\Hero\Mage;
 require 'vendor/autoload.php';
 ?>
 <!doctype html>
@@ -24,12 +25,13 @@ Message::startGame();
 $doigbynique = new Warrior('Doigbynique', 'Tu es capable');
 $maeva = new Warrior('Maeva', 'Avec vos jeux de cons la ...');
 $max = new Archer('Gentil Lapin', 'Tu risque de te pincer très très fort ...');
+$nicolas = new Mage('Nico', 'Juste une pinte');
 $doigbynique->roar();
 $max->longShot($maeva);
 $maeva->attackTarget($doigbynique);
 
 
-dump($max);
+dump($nicolas->vampire($max));
 
 
 ?>

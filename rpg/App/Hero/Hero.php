@@ -6,6 +6,9 @@ use App\Game\Message;
 
 abstract class Hero
 {
+    const ATK_MODE_PHYSIC = 0;
+    const ATK_MODE_MAGIC = 1;
+
     protected string $name;
     protected ?string $favoriteQuote;
     protected int $maxHp;
@@ -209,15 +212,33 @@ abstract class Hero
      * @param int $atkValue
      * @return int
      */
-    protected function calculateDamage(int $atkValue): int
+    protected function calculateDamage(int $atkValue, int $mode = self::ATK_MODE_PHYSIC): int
     {
-        $damage = $atkValue - $this->getArmor();
+        if($mode === self::ATK_MODE_PHYSIC) {
+            $damage = $atkValue - $this->getArmor();
+        } elseif ($mode === self::ATK_MODE_MAGIC) {
+            $damage = $atkValue - $this->getMagicArmor();
+        }
 
         if($damage < 0 ) {
             return 0;
         }
 
         return $damage;
+    }
+
+    protected function gainHp(int $healValue)
+    {
+
+        if($this->getHp() < $this->getMaxHp()) {
+            $this->setHp($this->getHp() + $healValue);
+
+            if($this->getHp() > $this->getMaxHp()) {
+                $this->setHp($this->getMaxHp());
+            }
+
+            Message::heal($this, $healValue);
+        }
     }
 }
 
