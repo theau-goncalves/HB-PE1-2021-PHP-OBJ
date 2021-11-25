@@ -29,7 +29,7 @@ $nicolas = new Mage('Nico', 'Juste une pinte');
 $doigbynique->roar();
 $max->longShot($maeva);
 $maeva->attackTarget($doigbynique);
-
+$nicolas->setHp($nicolas->getHp() - 50);
 
 dump($nicolas->vampire($max));
 

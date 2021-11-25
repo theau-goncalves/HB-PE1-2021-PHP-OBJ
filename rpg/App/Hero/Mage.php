@@ -25,6 +25,7 @@ class Mage extends Hero
         $effect = "Il inflige $damage points de dégat et se soigne le lanceur de " . $damage/2;
         Message::useSpell($this, 'Vampirisme', $effect);
         $target->loseHP($damage);
+        $this->gainHp($damage/2);
 
 
     }
