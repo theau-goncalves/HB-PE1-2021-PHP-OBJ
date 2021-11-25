@@ -5,6 +5,7 @@ use App\Hero\Warrior;
 use App\Hero\Archer;
 use App\Hero\Mage;
 use App\Item\Equipment;
+use App\Item\Item;
 
 require 'vendor/autoload.php';
 ?>
@@ -36,20 +37,20 @@ $nicolas->setHp($nicolas->getHp() - 50);
 
 $nicolas->vampire($max);
 
+$potion = new Item('Potion de soins', 0.1);
 $nains = new Equipment('Epée des nains', ['atkBonus' => 2], 6);
 $elfe = new Equipment('Epée des elfes', ['atkBonus' => 3], 6);
 $doig = new Equipment('Epée de Doig', ['atkBonus' => 400], 9);
 
 
+$nicolas->getInventory()->addItem($potion);
 $nicolas->getInventory()->addItem($nains);
 $nicolas->getInventory()->addItem($elfe);
 $nicolas->getInventory()->addItem($doig);
 
-dump($nicolas);
+dump($nicolas->getAtk());
 
-$nicolas->getInventory()->removeItem('Epée des elfes');
-dump($nicolas->getInventory()->getTotalWeight());
-dump($nicolas->getInventory()->getTotalWeightPercentage());
+
 ?>
 </body>
 </html>

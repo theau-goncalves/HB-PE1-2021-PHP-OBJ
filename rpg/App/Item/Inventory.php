@@ -78,6 +78,24 @@ class Inventory
         return round($this->getTotalWeight() * 100 / $this->getMaxWeight(),2);
     }
 
+    public function getBonus()
+    {
+        $bonus = [
+            'atkBonus' => 0,
+            'armorBonus' => 0,
+            'magicAtkBonus' => 0,
+            'magicArmorBonus' => 0,
+        ];
+        foreach ($this->getSlots() as $item) {
+            if($item instanceof Equipment) {
+                $bonus['atkBonus'] += $item->getAtkBonus();
+                $bonus['armorBonus'] += $item->getArmorBonus();
+                $bonus['magicAtkBonus'] += $item->getMagicAtkBonus();
+                $bonus['magicArmorBonus'] += $item->getMagicArmorBonus();
+            }
+        }
 
+        return $bonus;
+    }
 
 }

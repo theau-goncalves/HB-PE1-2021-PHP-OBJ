@@ -130,6 +130,9 @@ abstract class Hero
      */
     public function getAtk(): int
     {
+        if($this->getInventory()->getBonus()['atkBonus'] > 0) {
+            return $this->atk + $this->getInventory()->getBonus()['atkBonus'];
+        }
         return $this->atk;
     }
 
