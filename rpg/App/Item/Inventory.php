@@ -8,7 +8,7 @@ class Inventory
     private int $maxWeight = 100;
 
     /**
-     * @return array
+     * @return Item[]
      */
     public function getSlots(): array
     {
@@ -42,5 +42,21 @@ class Inventory
     public function addItem(Item $item): void
     {
         $this->slots[] = $item;
+    }
+
+    /**
+     * Supprime un item de l'inventaire à partir de son nom
+     * @param string $itemToRemoveName
+     */
+    public function removeItem(string $itemToRemoveName)
+    {
+        foreach ($this->getSlots() as $key => $item) {
+            if($item->getName() === $itemToRemoveName) {
+                $slots = $this->getSlots();
+                unset($slots[$key]);
+                $this->setSlots($slots);
+                break;
+            }
+        }
     }
 }

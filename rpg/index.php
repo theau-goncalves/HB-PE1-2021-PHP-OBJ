@@ -1,4 +1,5 @@
 <?php
+
 use App\Game\Message;
 use App\Hero\Warrior;
 use App\Hero\Archer;
@@ -35,20 +36,19 @@ $nicolas->setHp($nicolas->getHp() - 50);
 
 $nicolas->vampire($max);
 
-$epee = new Equipment(
-        'Epée des nains',
-        [
-                'atkBonus' => 2
-        ],
-        6
-);
+$nains = new Equipment('Epée des nains', ['atkBonus' => 2], 6);
+$elfe = new Equipment('Epée des elfes', ['atkBonus' => 3], 6);
+$doig = new Equipment('Epée de Doig', ['atkBonus' => 400], 6);
 
 
-dump($epee);
-$nicolas->getInventory()->addItem($epee);
+$nicolas->getInventory()->addItem($nains);
+$nicolas->getInventory()->addItem($elfe);
+$nicolas->getInventory()->addItem($doig);
 
 dump($nicolas);
 
+$nicolas->getInventory()->removeItem('Epée des elfes');
+dump($nicolas);
 ?>
 </body>
 </html>
