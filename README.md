@@ -23,7 +23,7 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 - [x] Abstract
 - [ ] Trait
 - [ ] Interface
-- [ ] ReflectionClass
+- [x] ReflectionClass
 - [X] [Composer -> HB Lesson](https://github.com/theau-goncalves/composer-autoloader)
 
 ### Exercises
