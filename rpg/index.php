@@ -50,6 +50,7 @@ $nicolas->getInventory()->addItem($doig);
 
 dump($nicolas->getAtk());
 
+//dump((new \ReflectionClass(Equipment::class))->getMethods());
 
 ?>
 </body>

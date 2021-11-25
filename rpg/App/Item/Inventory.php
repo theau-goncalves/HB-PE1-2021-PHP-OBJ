@@ -80,22 +80,22 @@ class Inventory
 
     public function getBonus()
     {
-        $bonus = [
-            'atkBonus' => 0,
-            'armorBonus' => 0,
-            'magicAtkBonus' => 0,
-            'magicArmorBonus' => 0,
-        ];
+        $bonusList = [];
+
+        foreach ((new \ReflectionClass(Equipment::class))->getProperties() as $property) {
+            $bonusList[$property->getName()] = 0;
+        }
+
         foreach ($this->getSlots() as $item) {
             if($item instanceof Equipment) {
-                $bonus['atkBonus'] += $item->getAtkBonus();
-                $bonus['armorBonus'] += $item->getArmorBonus();
-                $bonus['magicAtkBonus'] += $item->getMagicAtkBonus();
-                $bonus['magicArmorBonus'] += $item->getMagicArmorBonus();
+                foreach ($bonusList as $bonusName => $value) {
+                    $methodName = 'get' . $bonusName ;
+                    $bonusList[$bonusName] += $item->$methodName();
+                }
             }
         }
 
-        return $bonus;
+        return $bonusList;
     }
 
 }
