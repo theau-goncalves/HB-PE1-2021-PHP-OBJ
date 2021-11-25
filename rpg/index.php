@@ -3,6 +3,8 @@ use App\Game\Message;
 use App\Hero\Warrior;
 use App\Hero\Archer;
 use App\Hero\Mage;
+use App\Item\Equipment;
+
 require 'vendor/autoload.php';
 ?>
 <!doctype html>
@@ -31,8 +33,18 @@ $max->longShot($maeva);
 $maeva->attackTarget($doigbynique);
 $nicolas->setHp($nicolas->getHp() - 50);
 
-dump($nicolas->vampire($max));
+$nicolas->vampire($max);
 
+$epee = new Equipment(
+        'Epée des nains',
+        [
+                'atkBonus' => 2
+        ],
+        6
+);
+
+
+dump($epee);
 
 ?>
 </body>
