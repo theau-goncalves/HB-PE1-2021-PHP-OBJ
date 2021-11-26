@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Cocur\Slugify\Slugify;
+
 class User implements SlugInterface
 {
     private string $firstName;
@@ -52,7 +54,12 @@ class User implements SlugInterface
 
     public function getSlug(): string
     {
-        $string = $this->getFirstName() . $this->getLastName();
-        return strtolower($string);
+        $s = new Slugify();
+        return $s->slugify($this->__toString());
+    }
+
+    public function __toString()
+    {
+        return $this->getFirstName() . ' ' . $this->getLastName();
     }
 }
