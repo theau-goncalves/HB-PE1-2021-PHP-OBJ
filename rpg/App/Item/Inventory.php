@@ -2,7 +2,9 @@
 
 namespace App\Item;
 
-class Inventory
+use ArrayAccess;
+
+class Inventory implements ArrayAccess
 {
     private array $slots = [];
     private int $maxWeight = 150;
@@ -53,7 +55,7 @@ class Inventory
     public function removeItem(string $itemToRemoveName)
     {
         foreach ($this->getSlots() as $key => $item) {
-            if($item->getName() === $itemToRemoveName) {
+            if ($item->getName() === $itemToRemoveName) {
                 $slots = $this->getSlots();
                 unset($slots[$key]);
                 $this->setSlots($slots);
@@ -75,7 +77,7 @@ class Inventory
 
     public function getTotalWeightPercentage(): float
     {
-        return round($this->getTotalWeight() * 100 / $this->getMaxWeight(),2);
+        return round($this->getTotalWeight() * 100 / $this->getMaxWeight(), 2);
     }
 
     public function getBonus()
@@ -87,9 +89,9 @@ class Inventory
         }
 
         foreach ($this->getSlots() as $item) {
-            if($item instanceof Equipment) {
+            if ($item instanceof Equipment) {
                 foreach ($bonusList as $bonusName => $value) {
-                    $methodName = 'get' . $bonusName ;
+                    $methodName = 'get' . $bonusName;
                     $bonusList[$bonusName] += $item->$methodName();
                 }
             }
@@ -98,4 +100,27 @@ class Inventory
         return $bonusList;
     }
 
+    public function offsetSet($offset, $value): void
+    {
+        if (is_null($offset)) {
+            $this->slots[] = $value;
+        } else {
+            $this->slots[$offset] = $value;
+        }
+    }
+
+    public function offsetExists($offset): bool
+    {
+        return isset($this->slots[$offset]);
+    }
+
+    public function offsetUnset($offset): void
+    {
+        unset($this->slots[$offset]);
+    }
+
+    public function offsetGet($offset): mixed
+    {
+        return $this->slots[$offset] ?? null;
+    }
 }

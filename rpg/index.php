@@ -46,22 +46,16 @@ $doig = new Equipment('Epée de Doig', ['atkBonus' => 400], 9);
 $nicolas->getInventory()->addItem($potion);
 $nicolas->getInventory()->addItem($nains);
 $nicolas->getInventory()->addItem($elfe);
-$nicolas->getInventory()->addItem($doig);
-
-dump($nicolas->getAtk());
-
-//dump((new \ReflectionClass(Equipment::class))->getMethods());
 
 
-function prefixPrenom(&$name) {
-    $name = "Super " . $name;
-}
 
-$theau = 'Théau';
+$nicolas->getInventory()[] = $doig;
 
-prefixPrenom($theau);
+dump($nicolas->getInventory());
 
-dump($theau);
+
+
+
 
 
 ?>

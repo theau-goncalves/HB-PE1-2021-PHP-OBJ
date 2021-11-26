@@ -6,12 +6,17 @@ use ArrayAccess;
 
 class Config implements ArrayAccess
 {
+    const MODE_PROD = 1;
+    const MODE_TEST = 0;
+
     private array $params = [
         'login' => 'root',
         'passwd' => 'f5dfknc@d5',
         'port' => 3306,
         'database_name' => 'H1_PE1'
     ];
+
+    private int $mode = self::MODE_TEST;
 
     /**
      * @return array
@@ -48,4 +53,22 @@ class Config implements ArrayAccess
     {
         unset($this->params[$offset]);
     }
+
+    /**
+     * @return int
+     */
+    public function getMode(): int
+    {
+        return $this->mode;
+    }
+
+    /**
+     * @param int $mode
+     */
+    public function setMode(int $mode): void
+    {
+        $this->mode = $mode;
+    }
+
+
 }
