@@ -7,7 +7,7 @@ use App\Portfolio;
 
 
 $post = new Post("Les iterfaces c'est cool");
-$post->setContent('Vraiment je vous assure');
+
 
 
 //echo $post->getMetaTitle();
@@ -28,3 +28,5 @@ dump($r->getProperties());
 
 //Ecriture compacte
 dump((new ReflectionClass(Portfolio::class))->getProperties());
+
+dump((new Post("coucou c'est théau"))->getTitle());

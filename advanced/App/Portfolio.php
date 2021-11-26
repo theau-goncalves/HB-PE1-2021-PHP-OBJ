@@ -11,15 +11,12 @@ class Portfolio implements SeoInterface
     private string $projectName;
     private string $description;
     private string $mainImageUrl;
-    private DateTime $createdAt;
 
     public function __construct()
     {
         $this->projectName = "Former les PE1 HB";
         $this->description = "Cours de PHP OBJECT + Composer";
         $this->mainImageUrl = "https://static.fnac-static.com/multimedia/Images/FD/Comete/145614/CCP_IMG_ORIGINAL/1918415.jpg";
-        $this->createdAt = new DateTime();
-
     }
 
     /**
@@ -69,24 +66,4 @@ class Portfolio implements SeoInterface
     {
         $this->mainImageUrl = $mainImageUrl;
     }
-
-    /**
-     * @return DateTime
-     */
-    public function getCreatedAt(): DateTime
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @param DateTime $createdAt
-     */
-    public function setCreatedAt(DateTime $createdAt): void
-    {
-        $this->createdAt = $createdAt;
-    }
-
-
-
-
 }

@@ -4,11 +4,12 @@ namespace App;
 
 use DateTime;
 
-class Post implements SeoInterface
+class Post implements SeoInterface, TimestampInterface
 {
+    use TimestampTrait;
+
     private string $title;
-    private string $content;
-    private DateTime $createdAt;
+    private ?string $content;
 
     /**
      * @param string $title
@@ -16,7 +17,7 @@ class Post implements SeoInterface
     public function __construct(string $title)
     {
         $this->title = $title;
-        $this->createdAt = new DateTime();
+
     }
 
     /**
@@ -36,35 +37,19 @@ class Post implements SeoInterface
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getContent(): string
+    public function getContent(): ?string
     {
         return $this->content;
     }
 
     /**
-     * @param string $content
+     * @param string|null $content
      */
-    public function setContent(string $content): void
+    public function setContent(?string $content): void
     {
         $this->content = $content;
-    }
-
-    /**
-     * @return DateTime
-     */
-    public function getCreatedAt(): DateTime
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @param DateTime $createdAt
-     */
-    public function setCreatedAt(DateTime $createdAt): void
-    {
-        $this->createdAt = $createdAt;
     }
 
     /**
