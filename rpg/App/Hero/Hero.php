@@ -26,7 +26,7 @@ abstract class Hero
     {
         $this->name = $name;
         $this->favoriteQuote = $favoriteQuote;
-        $this->inventory = new Inventory();
+        $this->inventory = new Inventory($this);
     }
 
     /**

@@ -3,6 +3,7 @@
 require 'vendor/autoload.php';
 use App\Post;
 use App\Config;
+use App\Portfolio;
 
 
 $post = new Post("Les iterfaces c'est cool");
@@ -19,4 +20,6 @@ $config->setMode(Config::MODE_PROD);
 
 $config['admin_email'] = 'theau@drosalys.fr';
 
-dump($config->getParams());
+$portfolio = new Portfolio();
+
+dump((new ReflectionClass(Portfolio::class))->getProperties());

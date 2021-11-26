@@ -53,6 +53,7 @@ $nicolas->getInventory()[] = $doig;
 
 dump($nicolas->getInventory());
 
+echo count($nicolas->getInventory());
 
 
 

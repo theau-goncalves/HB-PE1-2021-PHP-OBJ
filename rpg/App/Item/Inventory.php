@@ -2,12 +2,20 @@
 
 namespace App\Item;
 
+use App\Hero\Hero;
 use ArrayAccess;
+use Countable;
 
-class Inventory implements ArrayAccess
+class Inventory implements ArrayAccess, Countable
 {
     private array $slots = [];
     private int $maxWeight = 150;
+    private Hero $hero;
+
+    public function __construct(Hero $hero)
+    {
+        $this->hero = $hero;
+    }
 
     /**
      * @return Item[]
@@ -123,4 +131,27 @@ class Inventory implements ArrayAccess
     {
         return $this->slots[$offset] ?? null;
     }
+
+    public function count()
+    {
+        return count($this->slots);
+    }
+
+    /**
+     * @return Hero
+     */
+    public function getHero(): Hero
+    {
+        return $this->hero;
+    }
+
+    /**
+     * @param Hero $hero
+     */
+    public function setHero(Hero $hero): void
+    {
+        $this->hero = $hero;
+    }
+
+
 }
