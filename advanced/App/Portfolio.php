@@ -86,7 +86,7 @@ class Portfolio implements SeoInterface
         $this->createdAt = $createdAt;
     }
 
-    
+
 
 
 }

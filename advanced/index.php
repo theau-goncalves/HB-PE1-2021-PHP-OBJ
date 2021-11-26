@@ -22,4 +22,9 @@ $config['admin_email'] = 'theau@drosalys.fr';
 
 $portfolio = new Portfolio();
 
+//Ecriture simple
+$r = new ReflectionClass(Portfolio::class);
+dump($r->getProperties());
+
+//Ecriture compacte
 dump((new ReflectionClass(Portfolio::class))->getProperties());
