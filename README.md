@@ -16,7 +16,7 @@ Human Booster PE1 2021 Clermont-Ferrand php object lesson
 - [x] Constructor
 - [x] Visibility (public private protected)
 - [x] Heritage
-- [ ] __invoke
+- [x] __invoke
 - [x] __toString
 - [ ] Exceptions
 - [x] Static

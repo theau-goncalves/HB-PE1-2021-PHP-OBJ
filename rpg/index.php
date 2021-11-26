@@ -52,6 +52,18 @@ dump($nicolas->getAtk());
 
 //dump((new \ReflectionClass(Equipment::class))->getMethods());
 
+
+function prefixPrenom(&$name) {
+    $name = "Super " . $name;
+}
+
+$theau = 'Théau';
+
+prefixPrenom($theau);
+
+dump($theau);
+
+
 ?>
 </body>
 </html>
