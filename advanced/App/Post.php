@@ -1,6 +1,10 @@
 <?php
 
-class Post
+namespace App;
+
+use DateTime;
+
+class Post implements SeoInterface
 {
     private string $title;
     private string $content;
@@ -63,7 +67,21 @@ class Post
         $this->createdAt = $createdAt;
     }
 
+    /**
+     * For <title> html element
+     * @return string
+     */
+    public function getMetaTitle(): string
+    {
+        return $this->getTitle();
+    }
 
-
-
+    /**
+     * For <meta name="description">
+     * @return string
+     */
+    public function getMetaDescription(): string
+    {
+        return substr($this->getContent(), 0, 160);
+    }
 }
