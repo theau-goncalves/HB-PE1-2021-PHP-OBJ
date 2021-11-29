@@ -17,6 +17,23 @@ class CrewMember
     }
 
     /**
+     * @param array $spaceXArray Tableau envoyé par l'API SpaceX sans modification
+     * @return CrewMember
+     */
+    public function hydrate(array $spaceXArray): CrewMember
+    {
+        foreach ($spaceXArray as $key => $value) {
+            $method = 'set' . ucfirst($key);
+
+            if(method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getId(): string

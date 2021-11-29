@@ -7,6 +7,8 @@ if(empty($_GET['page'])) {
 } else {
     if($_GET['page'] == 'mentions-legales') {
         (new \App\Controller\LegalNoticeController())();
+    } elseif($_GET['page'] == 'space-x-members-list') {
+        (new \App\Controller\spaceX\Member\CrewMemberIndexController())();
     } else {
         (new \App\Controller\NotFoundController())();
     }
