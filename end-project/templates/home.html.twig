@@ -14,4 +14,12 @@
 {% endblock body %}
 
 
+{% block footer %}
+    {% embed "partials/base/footer.html.twig" %}
+        {% block contact %}
+            Utilisation de embed
+        {% endblock contact %}
+    {% endembed %}
+{% endblock footer %}
+
 
