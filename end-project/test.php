@@ -10,3 +10,5 @@ $response = $client->request('GET', 'https://api.spacexdata.com/v4/crew');
 if($response->getStatusCode() === 200) {
     dump($response->toArray());
 }
+
+dump((new \App\Entity\CrewMember('toto', 'titi')));
