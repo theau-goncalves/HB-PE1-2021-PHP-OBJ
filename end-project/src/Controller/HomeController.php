@@ -6,7 +6,7 @@ class HomeController extends AbstractController
 {
     public function __invoke()
     {
-        $this->display('base.html.twig', [
+        $this->display('home.html.twig', [
             'lastName' => 'Toto',
         ]);
     }
