@@ -19,7 +19,6 @@ class CrewMemberIndexController extends AbstractController
     {
         $this->display('spaceX/member/index.html.twig', [
             'members' => $this->spaceApi->getCrewMembers(),
-            'captain_members' => $this->spaceApi->getCrewMembers(),
         ]);
     }
 }
