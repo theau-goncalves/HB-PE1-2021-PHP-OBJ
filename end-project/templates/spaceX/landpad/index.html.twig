@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for landpad in landpads  %}
+        <div>
+            <a href="?page=space-x-landpad-show&id={{ landpad.id }}">
+                {{ landpad.fullName }}
+            </a>
+
+        </div>
+    {% endfor %}
+{% endblock body %}

@@ -3,6 +3,7 @@
 namespace App\Service\spaceX;
 
 use App\Entity\CrewMember;
+use App\Entity\Landpad;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\Exception\ClientExceptionInterface;
 use Symfony\Contracts\HttpClient\Exception\DecodingExceptionInterface;
@@ -25,7 +26,7 @@ class SpaceXApiService
 
         $members = $this->makeRequest('https://api.spacexdata.com/v4/crew');
 
-        if($members === null) {
+        if ($members === null) {
             return null;
         }
 
@@ -42,34 +43,62 @@ class SpaceXApiService
     public function getCrewMember(string $id): ?CrewMember
     {
         $member = $this->makeRequest('https://api.spacexdata.com/v4/crew/' . $id);
-        if($member === null) {
+        if ($member === null) {
             return null;
         }
         return (new CrewMember())->hydrate($member);
+    }
+
+    public function getLandpads(): ?array
+    {
+
+        $landpads = $this->makeRequest('https://api.spacexdata.com/v4/landpads');
+
+        if ($landpads === null) {
+            return null;
+        }
+
+        $landpadsObject = [];
+
+        foreach ($landpads as $landpad) {
+            $landpadObj = new Landpad();
+            $landpadObj->hydrate($landpad);
+            $landpadsObject[] = $landpadObj;
+
+
+        }
+        return $landpadsObject;
+    }
+
+    public function getLandpad(string $id): ?Landpad
+    {
+        $landpad = $this->makeRequest('https://api.spacexdata.com/v4/landpads/' . $id);
+        if ($landpad === null) {
+            return null;
+        }
+        return (new Landpad())->hydrate($landpad);
     }
 
     private function makeRequest(string $url, string $method = 'GET'): ?array
     {
         try {
             $response = $this->client->request($method, $url);
-            if($response->getStatusCode() !== 200) {
+            if ($response->getStatusCode() !== 200) {
                 return null;
             }
 
             return $response->toArray();
         } catch (
-        TransportExceptionInterface|
-        ClientExceptionInterface|
-        DecodingExceptionInterface|
-        RedirectionExceptionInterface|
+        TransportExceptionInterface |
+        ClientExceptionInterface |
+        DecodingExceptionInterface |
+        RedirectionExceptionInterface |
         ServerExceptionInterface $e
         ) {
             echo $e->getMessage();
             return null;
 
         }
-
-
     }
 
 }
