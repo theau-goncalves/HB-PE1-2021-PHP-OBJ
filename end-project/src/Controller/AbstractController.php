@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Twig\Extension\SymfoDumpExtension;
 use Twig\Environment;
+use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
 
 abstract class AbstractController
@@ -14,8 +16,11 @@ abstract class AbstractController
     {
         $this->loader = new FilesystemLoader('./templates');
         $this->twig = new Environment($this->loader, [
+            'debug' => true,
 //            'cache' => './var/cache',
         ]);
+
+        $this->twig->addExtension(new SymfoDumpExtension());
     }
 
     /**

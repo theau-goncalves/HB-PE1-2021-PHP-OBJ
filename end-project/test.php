@@ -19,3 +19,4 @@ try {
 } catch (Exception $e) {
     echo 'Exception reçue : ',  $e->getMessage(), "\n";
 }
+

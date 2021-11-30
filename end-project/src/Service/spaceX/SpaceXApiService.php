@@ -23,7 +23,7 @@ class SpaceXApiService
     public function getCrewMembers(): ?array
     {
 
-        $members = $this->makeRequest('https://pi.spacexdata.com/v4/crew');
+        $members = $this->makeRequest('https://api.spacexdata.com/v4/crew');
 
         if($members === null) {
             return null;
