@@ -28,7 +28,7 @@ class SpaceXApiService
         if($members === null) {
             return null;
         }
-        
+
         $membersObject = [];
 
         foreach ($members as $member) {
@@ -37,6 +37,15 @@ class SpaceXApiService
             $membersObject[] = $memberObj;
         }
         return $membersObject;
+    }
+
+    public function getCrewMember(string $id): ?CrewMember
+    {
+        $member = $this->makeRequest('https://api.spacexdata.com/v4/crew/' . $id);
+        if($member === null) {
+            return null;
+        }
+        return (new CrewMember())->hydrate($member);
     }
 
     private function makeRequest(string $url, string $method = 'GET'): ?array

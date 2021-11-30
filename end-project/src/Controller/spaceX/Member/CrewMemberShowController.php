@@ -18,8 +18,10 @@ class CrewMemberShowController extends AbstractController
 
     public function __invoke()
     {
-        $this->display('spaceX/member/show.html.twig', [
+        $this->spaceApi->getCrewMember($this->crewMemberId);
 
+        $this->display('spaceX/member/show.html.twig', [
+//            'member' => $this->spaceApi->getCrewMember($this->crewMemberId)
         ]);
     }
 }
