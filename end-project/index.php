@@ -9,6 +9,12 @@ if(empty($_GET['page'])) {
         (new \App\Controller\LegalNoticeController())();
     } elseif($_GET['page'] == 'space-x-members-list') {
         (new \App\Controller\spaceX\Member\CrewMemberIndexController())();
+    } elseif($_GET['page'] == 'space-x-member-show') {
+        if(!empty($_GET['id'])) {
+            (new \App\Controller\spaceX\Member\CrewMemberShowController($_GET['id']))();
+        } else {
+            (new \App\Controller\NotFoundController())();
+        }
     } else {
         (new \App\Controller\NotFoundController())();
     }
