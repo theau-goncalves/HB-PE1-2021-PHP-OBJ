@@ -15,10 +15,7 @@ abstract class AbstractController
     public function __construct()
     {
         $this->loader = new FilesystemLoader('./templates');
-        $this->twig = new Environment($this->loader, [
-            'debug' => true,
-//            'cache' => './var/cache',
-        ]);
+        $this->twig = new Environment($this->loader);
 
         $this->twig->addExtension(new SymfoDumpExtension());
     }
