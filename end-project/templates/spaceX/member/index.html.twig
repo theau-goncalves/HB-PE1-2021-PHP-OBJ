@@ -2,4 +2,8 @@
 
 {% block body %}
 
+    {% for member in members %}
+        {% include 'partials/card/spaceX_crew_member.html.twig' with {'entity': member} %}
+    {% endfor %}
+    
 {% endblock body %}

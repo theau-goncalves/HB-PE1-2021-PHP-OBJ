@@ -17,7 +17,9 @@ class CrewMemberIndexController extends AbstractController
 
     public function __invoke()
     {
-        dump($this->spaceApi->getCrewMembers());
-        $this->display('spaceX/member/index.html.twig');
+        $this->display('spaceX/member/index.html.twig', [
+            'members' => $this->spaceApi->getCrewMembers(),
+            'captain_members' => $this->spaceApi->getCrewMembers(),
+        ]);
     }
 }

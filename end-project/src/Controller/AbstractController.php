@@ -13,7 +13,9 @@ abstract class AbstractController
     public function __construct()
     {
         $this->loader = new FilesystemLoader('./templates');
-        $this->twig = new Environment($this->loader);
+        $this->twig = new Environment($this->loader, [
+//            'cache' => './var/cache',
+        ]);
     }
 
     /**
