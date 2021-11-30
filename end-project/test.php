@@ -5,10 +5,17 @@ require 'vendor/autoload.php';
 
 $client = HttpClient::create();
 
-$response = $client->request('GET', 'https://api.spacexdata.com/v4/crew');
 
-if($response->getStatusCode() === 200) {
-    dump($response->toArray());
+function inverse($x) {
+    if (!$x) {
+        throw new Exception('Division par zéro.');
+    }
+    return 1/$x;
 }
 
-dump((new \App\Entity\CrewMember('toto', 'titi')));
+try {
+    $response = $client->request('GET', 'https://ai.spacexdata.com/v4/crew');
+    echo $response->getStatusCode();
+} catch (Exception $e) {
+    echo 'Exception reçue : ',  $e->getMessage(), "\n";
+}

@@ -23,7 +23,7 @@ class SpaceXApiService
     public function getCrewMembers(): ?array
     {
 
-        $members = $this->makeRequest('https://api.spacexdata.com/v4/crew');
+        $members = $this->makeRequest('https://pi.spacexdata.com/v4/crew');
 
         if($members === null) {
             return null;
@@ -52,23 +52,24 @@ class SpaceXApiService
     {
         try {
             $response = $this->client->request($method, $url);
-        } catch (TransportExceptionInterface $e) {
+            if($response->getStatusCode() !== 200) {
+                return null;
+            }
 
-            //TODO A ajouter au fichier de log
-            return null;
-        }
-
-        if($response->getStatusCode() !== 200) {
-            return null;
-            //TODO logo ici
-        }
-
-        try {
             return $response->toArray();
-        } catch (\Exception $e) {
+        } catch (
+        TransportExceptionInterface|
+        ClientExceptionInterface|
+        DecodingExceptionInterface|
+        RedirectionExceptionInterface|
+        ServerExceptionInterface $e
+        ) {
+            echo $e->getMessage();
             return null;
-            //TODO logo ici
+
         }
+
+
     }
 
 }
