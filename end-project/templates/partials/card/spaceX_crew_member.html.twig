@@ -1,4 +1,11 @@
-<div>
-    {#        <img src="{{ member.image }}" alt="">#}
-    {{ entity.name }}
+<div class="card crew-card">
+    <img class="card-img-top" src="{{ member.image }}" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ member.name }} - {{ member.agency }}</h5>
+        <div class="d-flex justify-content-between mt-3">
+            <a href="{{ member.wikipedia }}" class="btn btn-primary">Wikipedia</a>
+            <a href="{{ member.wikipedia }}" class="btn btn-secondary">Détails</a>
+        </div>
+
+    </div>
 </div>

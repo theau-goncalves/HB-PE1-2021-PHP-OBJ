@@ -1,9 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="container">
+        <div class="row py-4">
+            <div class="col-12 text-center mb-4">
+                <h1>
+                    Membres d'équipage
+                </h1>
+            </div>
+            {% for member in members %}
+                <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                    {% include 'partials/card/spaceX_crew_member.html.twig' with {'entity': member} %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
-    {% for member in members %}
-        {% include 'partials/card/spaceX_crew_member.html.twig' with {'entity': member} %}
-    {% endfor %}
 
 {% endblock body %}
