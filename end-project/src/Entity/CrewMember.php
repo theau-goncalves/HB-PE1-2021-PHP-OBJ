@@ -7,11 +7,11 @@ class CrewMember
     public function __construct(
         private string $id = '',
         private string $name = '',
-        private string $image= '',
-        private string $wikipedia= '',
+        private string $image = '',
+        private string $wikipedia = '',
         private string $status = '',
-        private string $agency= '',
-        private array $launches = []
+        private string $agency = '',
+        private array  $launches = []
     )
     {
     }
@@ -25,7 +25,7 @@ class CrewMember
         foreach ($spaceXArray as $key => $value) {
             $method = 'set' . ucfirst($key);
 
-            if(method_exists($this, $method)) {
+            if (method_exists($this, $method)) {
                 $this->$method($value);
             }
         }
@@ -145,5 +145,18 @@ class CrewMember
         $this->launches = $launches;
     }
 
+    public function getStatusTrans(string $local = 'fr'): string
+    {
+        $trans = [
+            'fr' => [
+                'active' => "En Activité",
+                'inactive' => "Inactif",
+                'retired' => "A la retraite",
+                'unknown' => "Inconnu",
+            ]
+        ];
+
+        return $trans[$local][$this->status];
+    }
 
 }

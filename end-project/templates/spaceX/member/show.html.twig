@@ -8,12 +8,32 @@
                     {{ member.name }}
                 </h1>
             </div>
+
+            <div class="col-md-4">
+                <img src="{{ member.image }}" alt="">
+            </div>
+            <div class="col-md-8">
+                <ul>
+                    <li>
+                        <strong>Agence : </strong> {{ member.agency }}
+                    </li>
+                    <li>
+                        <strong>Status : </strong> {{ member.getStatusTrans }}
+                    </li>
+                    <li>
+                        <strong>Status : </strong> {{ member.getStatusTrans }}
+                    </li>
+                    <li>
+                        <strong>Lien wikipédia : </strong>
+                        <a target="_blank" href="{{ member.wikipedia }}">{{ member.wikipedia }}</a>
+                    </li>
+                    <li>
+                        <strong>Nombre de lancement : </strong> {{ member.launches|length }}
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    {% if toto is defined %}
-        
-    {% else %}
 
-    {% endif %}
 {% endblock body %}
