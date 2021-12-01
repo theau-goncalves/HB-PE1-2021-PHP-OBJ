@@ -26,10 +26,13 @@ function getImc(int $height, int $weight): float
 }
 
 
-try {
-    echo getImc(-100, 100);
-} catch (NegativeHeightException $exception) {
-    die('negatif');
-} catch (Exception $e) {
-    die($e->getMessage() . $e->getFile() . $e->getLine());
-}
+//try {
+//    echo getImc(-100, 100);
+//} catch (NegativeHeightException $exception) {
+//    die('negatif');
+//} catch (Exception $e) {
+//    die($e->getMessage() . $e->getFile() . $e->getLine());
+//}
+
+
+echo getImc(-100, 100);
