@@ -22,6 +22,7 @@ class CrewMember
      */
     public function hydrate(array $spaceXArray): CrewMember
     {
+
         foreach ($spaceXArray as $key => $value) {
             $method = 'set' . ucfirst($key);
 
